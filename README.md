@@ -56,9 +56,8 @@ mailer all work the same way.
 - Photographs are the originals from the live site, re-exported at web sizes. Each
   gallery photo has a 800×600 thumbnail (`*-thumb.jpg`) and a larger version used by
   the lightbox.
-- Phone numbers, email, address and licence numbers match the current site:
-  805.555.0100 / 805.555.0142, info@betterbuildsc.com,
-  South Carolina, Licence # B655786, C 906339.
+- Email and address match the current site: info@betterbuildsc.com, South Carolina.
+  License numbers are deliberately not published anywhere on the site.
 - The footer year updates itself.
 
 ## Features
