@@ -216,10 +216,17 @@
     var nums = $$('[data-count]');
     if (!nums.length) return;
 
+    // Each number animates exactly once and then holds its final value. The
+    // done flag guards against any second trigger (observer, sweep, reload of
+    // the module) restarting the count from zero.
     function run(el) {
+      if (el.hasAttribute('data-counted')) return;
+      el.setAttribute('data-counted', '');
+
       var target = parseFloat(el.getAttribute('data-count'));
       var suffix = el.getAttribute('data-suffix') || '';
-      if (reduceMotion) { el.textContent = target + suffix; return; }
+      var final = target + suffix;
+      if (reduceMotion) { el.textContent = final; return; }
 
       var startedAt = null;
       var dur = 1500;
@@ -228,7 +235,7 @@
         if (!startedAt) startedAt = ts;
         var p = Math.min((ts - startedAt) / dur, 1);
         var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(target * eased) + suffix;
+        el.textContent = p < 1 ? Math.round(target * eased) + suffix : final;
         if (p < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
@@ -242,8 +249,8 @@
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        run(entry.target);
         io.unobserve(entry.target);
+        run(entry.target);
       });
     }, { threshold: 0.5 });
 
