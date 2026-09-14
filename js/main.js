@@ -216,16 +216,29 @@
     var nums = $$('[data-count]');
     if (!nums.length) return;
 
-    // Each number animates exactly once and then holds its final value. The
-    // done flag guards against any second trigger (observer, sweep, reload of
-    // the module) restarting the count from zero.
+    // The count-up plays the first time the numbers scroll into view and then
+    // holds. A flag in sessionStorage remembers that it has already played, so
+    // scrolling back, reloading, or moving between pages in the same visit
+    // shows the final values immediately instead of counting up again.
+    var KEY = 'bbsc-counted';
+    function hasPlayed() {
+      try { return sessionStorage.getItem(KEY) === '1'; } catch (e) { return false; }
+    }
+    function markPlayed() {
+      try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* storage unavailable */ }
+    }
+
+    function finalText(el) {
+      return el.getAttribute('data-count') + (el.getAttribute('data-suffix') || '');
+    }
+
     function run(el) {
       if (el.hasAttribute('data-counted')) return;
       el.setAttribute('data-counted', '');
 
       var target = parseFloat(el.getAttribute('data-count'));
       var suffix = el.getAttribute('data-suffix') || '';
-      var final = target + suffix;
+      var final = finalText(el);
       if (reduceMotion) { el.textContent = final; return; }
 
       var startedAt = null;
@@ -241,7 +254,17 @@
       requestAnimationFrame(tick);
     }
 
+    // Already played this session: show the final numbers, no animation.
+    if (hasPlayed()) {
+      nums.forEach(function (el) {
+        el.setAttribute('data-counted', '');
+        el.textContent = finalText(el);
+      });
+      return;
+    }
+
     if (!('IntersectionObserver' in window)) {
+      markPlayed();
       nums.forEach(run);
       return;
     }
@@ -250,6 +273,7 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         io.unobserve(entry.target);
+        markPlayed();
         run(entry.target);
       });
     }, { threshold: 0.5 });

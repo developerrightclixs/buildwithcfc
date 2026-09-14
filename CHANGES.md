@@ -8,8 +8,8 @@ Summary of what the client asked for and what was done, in plain words.
 
 **What was done:**
 - Fixed the counter script (`js/main.js`) so each number animates only once and then stays at its final value. It can no longer restart from zero.
-- Hidden the whole stats block on the homepage and the About page (it is commented out, not deleted). Nothing shows on the live site there.
-- **Still needed from Mark:** the real numbers for **years of experience**, **landmark projects**, **market sectors** and **guaranteed work**. Once we have them, the block can be switched back on in a minute.
+- The stats block stays on the homepage and the About page. The numbers count up the **first** time they scroll into view; after that (scrolling back, reloading, or moving between pages in the same visit) they show the final value straight away with no animation.
+- **Still needed from Mark:** the real numbers for **years of experience**, **landmark projects**, **market sectors** and **guaranteed work**. The current values are placeholders and can be swapped in a minute.
 
 ## 2. The "30 years" wording
 
