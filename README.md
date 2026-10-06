@@ -15,7 +15,6 @@ folder to any web host.
 | `about.html` | `/about` |
 | `gallery.html` | `/gallery` |
 | `projects.html` | `/projects` |
-| `infrared-home-inspections.html` | `/infared-home-inspections` |
 | `contact.html` | `/form__map` and `/map` |
 
 Two old URLs were tidied up: the misspelled `infared` slug is now `infrared`, and the
