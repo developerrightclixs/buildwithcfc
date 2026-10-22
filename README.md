@@ -1,6 +1,6 @@
-# Better Build SC — betterbuildsc.com
+# Better Build SC — buildbettersc.com
 
-A rebuild of the existing betterbuildsc.com site in plain HTML, CSS and JavaScript.
+A rebuild of the existing buildbettersc.com site in plain HTML, CSS and JavaScript.
 The page structure, navigation, copy and photography of the original Wix site are
 kept; the presentation, responsiveness and interactions are new.
 
@@ -17,8 +17,7 @@ folder to any web host.
 | `projects.html` | `/projects` |
 | `contact.html` | `/form__map` and `/map` |
 
-Two old URLs were tidied up: the misspelled `infared` slug is now `infrared`, and the
-contact page is `contact.html` rather than `form__map`. If you want inbound links and
+One old URL was tidied up: the contact page is `contact.html` rather than `form__map`. If you want inbound links and
 search rankings to survive, add 301 redirects from the old paths to the new ones.
 
 ## Structure
@@ -55,7 +54,7 @@ mailer all work the same way.
 - Photographs are the originals from the live site, re-exported at web sizes. Each
   gallery photo has a 800×600 thumbnail (`*-thumb.jpg`) and a larger version used by
   the lightbox.
-- Email and address match the current site: info@betterbuildsc.com, South Carolina.
+- Email and address match the current site: info@buildbettersc.com, South Carolina.
   License numbers are deliberately not published anywhere on the site.
 - The footer year updates itself.
 

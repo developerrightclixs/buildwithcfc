@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Better Build SC — betterbuildsc.com
+   Better Build SC — buildbettersc.com
    Stylesheet
    --------------------------------------------------------------------------
    1.  Tokens & reset
@@ -12,7 +12,7 @@
    8.  Home page blocks
    9.  Gallery
    10. Project list
-   11. Infrared
+   11. Supply & install grid
    12. Contact & forms
    13. Footer & utilities
    14. Motion & responsive
@@ -938,7 +938,7 @@ strong { font-weight: 600; color: var(--ink); }
 /* Stats */
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
@@ -1055,6 +1055,28 @@ strong { font-weight: 600; color: var(--ink); }
 
 /* Journey (California -> South Carolina) ---------------------------------- */
 
+/* Story copy and pull quote (About page) */
+.pull-quote {
+  margin: 38px 0 0;
+  padding: 30px 36px 30px 40px;
+  border-left: 4px solid var(--gold);
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.pull-quote p {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.pull-quote p::before { content: "\201C"; color: var(--gold); margin-right: 2px; }
+.pull-quote p::after { content: "\201D"; color: var(--gold); margin-left: 2px; }
+
 .journey {
   display: flex;
   align-items: stretch;
@@ -1110,6 +1132,9 @@ strong { font-weight: 600; color: var(--ink); }
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
 }
+
+/* An odd card left alone on the last row sits in the middle column. */
+.service-grid > .service-card:last-child:nth-child(3n + 1) { grid-column: 2; }
 
 .service-card {
   position: relative;
@@ -1240,6 +1265,16 @@ strong { font-weight: 600; color: var(--ink); }
 }
 
 .tile:hover .tile-body p { max-height: 90px; opacity: 1; margin-top: 6px; }
+
+/* Four-up variant: two wide tiles per row, with room for a full description. */
+.tile-grid--four { grid-template-columns: repeat(2, 1fr); }
+.tile-grid--four .tile { aspect-ratio: 16 / 9; }
+.tile-grid--four .tile-body h3 { font-size: 1.6rem; }
+.tile-grid--four .tile:hover .tile-body p { max-height: 160px; }
+
+@media (hover: none) {
+  .tile-grid--four .tile-body p { max-height: none; opacity: 1; margin-top: 6px; }
+}
 
 .tile-count {
   position: absolute;
@@ -1723,29 +1758,7 @@ strong { font-weight: 600; color: var(--ink); }
 
 .chips a:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
 
-/* 11. Infrared ============================================================ */
-
-.thermal-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.thermal-card {
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
-}
-
-.thermal-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-
-.thermal-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-
-.thermal-card .body { padding: 22px 24px 26px; }
-.thermal-card h3 { font-size: 1.16rem; margin-bottom: 6px; }
-.thermal-card p { font-size: .93rem; color: var(--slate); margin: 0; }
+/* 11. Supply & install grid =============================================== */
 
 .detect-grid {
   display: grid;
@@ -2098,8 +2111,8 @@ strong { font-weight: 600; color: var(--ink); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .service-grid,
   .tile-grid,
-  .thermal-grid,
   .gal-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-grid > .service-card:last-child:nth-child(3n + 1) { grid-column: auto; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .detect-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -2116,7 +2129,6 @@ strong { font-weight: 600; color: var(--ink); }
   .split--wide-right { grid-template-columns: 1fr; }
   .split-media--framed::before { display: none; }
   .badge-years { right: 12px; bottom: -18px; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
   .mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; }
   .mosaic a:nth-child(1) { grid-column: span 2; }
   .mosaic a:nth-child(4),
@@ -2140,11 +2152,12 @@ strong { font-weight: 600; color: var(--ink); }
   .topbar-sep { display: none; }
   .service-grid,
   .tile-grid,
-  .thermal-grid,
   .gal-grid,
   .steps,
   .detect-grid,
   .field-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; }
+  .tile-grid--four .tile { aspect-ratio: 4 / 3.1; }
   .footer-grid { grid-template-columns: 1fr; gap: 38px; }
   .mosaic { grid-template-columns: 1fr; grid-auto-rows: 210px; }
   .mosaic a:nth-child(n) { grid-column: auto; grid-row: auto; }

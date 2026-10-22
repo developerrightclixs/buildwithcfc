@@ -9,7 +9,7 @@ Summary of what the client asked for and what was done, in plain words.
 **What was done:**
 - Fixed the counter script (`js/main.js`) so each number animates only once and then stays at its final value. It can no longer restart from zero.
 - The stats block stays on the homepage and the About page. The numbers count up the **first** time they scroll into view; after that (scrolling back, reloading, or moving between pages in the same visit) they show the final value straight away with no animation.
-- **Still needed from Mark:** the real numbers for **years of experience**, **landmark projects**, **market sectors** and **guaranteed work**. The current values are placeholders and can be swapped in a minute.
+- **Still needed from Mark:** the real numbers for **years of experience**, **landmark projects** and **guaranteed work**. The current values are placeholders and can be swapped in a minute.
 
 ## 2. The "30 years" wording
 
