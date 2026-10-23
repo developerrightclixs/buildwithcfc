@@ -1276,6 +1276,20 @@ strong { font-weight: 600; color: var(--ink); }
   .tile-grid--four .tile-body p { max-height: none; opacity: 1; margin-top: 6px; }
 }
 
+/* Three-up variant: one row of taller tiles, with room for a full description. */
+.tile-grid--three .tile { aspect-ratio: 4 / 5; }
+.tile-grid--three .tile-body h3 { font-size: 1.5rem; }
+.tile-grid--three .tile:hover .tile-body p { max-height: 220px; }
+
+@media (hover: none) {
+  .tile-grid--three .tile-body p { max-height: none; opacity: 1; margin-top: 6px; }
+}
+
+@media (max-width: 1080px) and (min-width: 961px) {
+  .tile-grid--three .tile { aspect-ratio: 4 / 3.6; }
+  .tile-grid--three .tile:last-child { grid-column: 1 / -1; aspect-ratio: 21 / 9; }
+}
+
 .tile-count {
   position: absolute;
   top: 20px;
@@ -2158,6 +2172,7 @@ strong { font-weight: 600; color: var(--ink); }
   .field-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr; }
   .tile-grid--four .tile { aspect-ratio: 4 / 3.1; }
+  .tile-grid--three .tile { aspect-ratio: 4 / 3.6; }
   .footer-grid { grid-template-columns: 1fr; gap: 38px; }
   .mosaic { grid-template-columns: 1fr; grid-auto-rows: 210px; }
   .mosaic a:nth-child(n) { grid-column: auto; grid-row: auto; }

@@ -1,3 +1,35 @@
+# Changes made — 23 October 2026
+
+## 1. Contact page – licensing line
+
+**Client said:** Remove "Fully licensed and insured for work throughout South Carolina." Nothing replaces it. We do not make licensing claims on the site.
+
+**What was done:** Removed the whole "Licensed & Insured" item from the contact details, heading and icon included, since the heading alone is still a licensing claim. No other licensing wording exists on the site.
+
+## 2. Homepage – What We Build
+
+**Client said:** Remove the "Owner's Representation & Construction Management" card. That service is on hold. Three cards is fine.
+
+**What was done:** Card removed. The section now shows Custom Homes, Whole-Home Renovations and Doors, Windows & Millwork in a single row of three (`css/style.css`, new three-up tile layout).
+
+## 3. About page – residential wording
+
+**Client said:** The About page still says "Large or Small, Commercial or Residential" and describes serving commercial clients. Make it match the residential site.
+
+**What was done:**
+- Heading "Large or Small, Commercial or Residential" → "Large or Small, Built for Your Home".
+- Opening paragraph: "Whether commercial or residential, every project gets our full attention" → "From a single room to a whole new home, every project gets our full attention."
+- Principals paragraph: hotels, schools and public buildings are now described as the principals' past California work, and the firm today is described as serving homeowners in Columbia, Lexington and the Midlands.
+- Services intro: "Our satisfied clientele come from all areas" → "Whether you are building new or renovating, our work is guaranteed…"
+
+**Not changed (outside this request):** the homepage still mentions commercial work in three places — the Welcome section ("commercial and residential markets"), the What We Do intro ("Large or small, commercial or residential") and the New Construction card ("commercial buildings").
+
+## Files touched
+
+`index.html`, `about.html`, `contact.html`, `css/style.css`
+
+---
+
 # Changes made — 15 September 2026
 
 Summary of what the client asked for and what was done, in plain words.
