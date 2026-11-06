@@ -1,3 +1,34 @@
+# Changes made — 6 November 2026
+
+## 1. Homepage – "Ground-up custom homes" card
+
+**Client said:** Replace "Ground-up custom homes, multi-family dwellings and commercial buildings delivered under a single design build contract." with "Ground-up custom residences, from first sketch through final walk-through, under a single design build contract."
+
+**What was done:** Replaced. The old text was on the New Construction card in What We Do. The Custom Homes tile in What We Build already had the new wording, so the same sentence now appears on both cards.
+
+## 2. Homepage – "BBSC provides" sentence
+
+**Client said:** Replace "BBSC provides a variety of services and products for our clients in commercial and residential markets." with "Better Build SC provides construction services and materials for homeowners throughout Columbia, Lexington and the surrounding Midlands."
+
+**What was done:** Replaced. The old text was in the Welcome section, not the What We Do intro.
+
+**Not changed (outside this request):** the What We Do intro still says "Large or small, commercial or residential", and the Renovation card still mentions "hotels and public buildings".
+
+## 3. Stat counters
+
+**Client said:** Three of the four render as 0 on staging, and there are two experience labels. Run three only: 30+ Years of Experience, 30+ Landmark Projects, 100% Guaranteed Work. Remove the duplicate.
+
+**What was done:**
+- Removed the "30+ Years of Team Experience" photo badge from the homepage and About page, along with its styles, leaving the three counters.
+- The page HTML now holds the real figures instead of 0, so the numbers read correctly even if the count-up never runs (`index.html`, `about.html`).
+- The count-up now starts as soon as a number enters the screen (`js/main.js`).
+
+## Files touched
+
+`index.html`, `about.html`, `css/style.css`, `js/main.js`
+
+---
+
 # Changes made — 23 October 2026
 
 ## 1. Contact page – licensing line

@@ -220,6 +220,8 @@
     // holds. A flag in sessionStorage remembers that it has already played, so
     // scrolling back, reloading, or moving between pages in the same visit
     // shows the final values immediately instead of counting up again.
+    // The HTML already holds the final values, so a number that never animates
+    // (no script, no scroll, a page capture) still reads correctly, never 0.
     var KEY = 'bbsc-counted';
     function hasPlayed() {
       try { return sessionStorage.getItem(KEY) === '1'; } catch (e) { return false; }
@@ -276,7 +278,7 @@
         markPlayed();
         run(entry.target);
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0 });
 
     nums.forEach(function (el) { io.observe(el); });
   }
