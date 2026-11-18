@@ -53,7 +53,7 @@
 - Principals paragraph: hotels, schools and public buildings are now described as the principals' past California work, and the firm today is described as serving homeowners in Columbia, Lexington and the Midlands.
 - Services intro: "Our satisfied clientele come from all areas" → "Whether you are building new or renovating, our work is guaranteed…"
 
-**Not changed (outside this request):** the homepage still mentions commercial work in three places — the Welcome section ("commercial and residential markets"), the What We Do intro ("Large or small, commercial or residential") and the New Construction card ("commercial buildings").
+**Not changed (outside this request):** the homepage still mentions commercial work in three places — the Welcome section ("commercial and residential markets"), the What We Do intro (since replaced with "Better Build SC provides construction services and materials for homeowners throughout Columbia, Lexington and the surrounding Midlands.") and the New Construction card ("commercial buildings").
 
 ## Files touched
 
